@@ -1,0 +1,14 @@
+.pizza-filter {
+  margin-bottom: 2rem;
+
+  .horizontal-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}

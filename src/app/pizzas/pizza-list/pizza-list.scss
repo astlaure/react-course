@@ -1,0 +1,17 @@
+.pizza-list {
+  text-align: center;
+
+  a {
+    color: #333333;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .list-group {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
