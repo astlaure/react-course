@@ -1,10 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: process.env.final ? "./final/index.jsx" : "./src/index.jsx",
   output: {
     filename: "[name].bundle.js",
-    path: __dirname + '/dist',
+    path: __dirname + process.env.final ? "/fdist" : '/dist',
   },
   resolve: {
     extensions: ['.jsx', '.js']
@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: process.env.final ? "./final/index.html" : './src/index.html',
     })
   ],
   devtool: 'source-map',

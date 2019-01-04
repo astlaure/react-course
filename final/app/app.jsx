@@ -9,7 +9,7 @@ import PizzaDetail from './pizzas/pizza-detail/pizza-detail';
 import PizzaActions from './store/pizza.actions';
 import Header from './common/header/header';
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
 

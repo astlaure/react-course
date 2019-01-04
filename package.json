@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 8080 --progress",
+    "final": "webpack-dev-server --env.final --port 3000 --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
