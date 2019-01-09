@@ -41,7 +41,7 @@ PizzaList.propTypes = {
   pizzas: PropTypes.arrayOf({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired(),
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
   }),
   filter: PropTypes.string,
 };

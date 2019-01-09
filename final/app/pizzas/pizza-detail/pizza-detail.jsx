@@ -34,7 +34,7 @@ PizzaDetail.propTypes = {
   pizza: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired(),
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
   }),
 };
 

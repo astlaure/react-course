@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --port 8080 --progress",
     "final": "webpack-dev-server --env.final --port 3000 --progress",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -51,10 +52,17 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/file.mock.js",
-      "\\.(css|less|sass|scss)$": "<rootDir>/mocks/style.mock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/mocks/file.mock.js",
+      "\\.(css|less|sass|scss)$": "<rootDir>/tests/mocks/style.mock.js"
     },
-    "rootDir": "./tests",
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js"
+    "setupTestFrameworkScriptFile": "./tests/jest.setup.js",
+    "collectCoverageFrom": [
+      "final/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageReporters": [
+      "html"
+    ]
   }
 }
