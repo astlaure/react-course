@@ -1,4 +1,4 @@
-import "./pizza-filter.scss";
+import './pizza-filter.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ export class PizzaFilter extends React.Component {
 
     this.state = {
       filter: '',
-      active: false
+      active: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,37 +40,37 @@ export class PizzaFilter extends React.Component {
       <form action="#" onSubmit={this.handleSubmit} className="pizza-filter">
         <div className="horizontal-form">
           <div>
-            <input className="form-control" type="text" value={filter} name="filter" onChange={this.handleChange}/>
+            <input className="form-control" type="text" value={filter} name="filter" onChange={this.handleChange} />
           </div>
           <div>
             <div className="form-check">
-              <input id="active" className="form-check-input" type="checkbox" value={active} name="active" onChange={this.handleChange}/>
-              <label htmlFor="active" className="form-check-label">Active</label>
+              <label htmlFor="active" className="form-check-label">
+                <input id="active" className="form-check-input" type="checkbox" value={active} name="active" onChange={this.handleChange} />
+                Active
+              </label>
             </div>
           </div>
           <div>
-            <input type="submit" className="btn btn-primary" value="Filter"/>
+            <input type="submit" className="btn btn-primary" value="Filter" />
           </div>
         </div>
       </form>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setFilter(filter) {
-      dispatch(PizzaActions.setFilter(filter));
-    }
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  setFilter(filter) {
+    dispatch(PizzaActions.setFilter(filter));
+  },
+});
 
 PizzaFilter.propTypes = {
-  setFilter: PropTypes.func
+  setFilter: PropTypes.func,
 };
 
 PizzaFilter.defaultProps = {
-  setFilter() {}
+  setFilter() {},
 };
 
 export default connect(null, mapDispatchToProps)(PizzaFilter);

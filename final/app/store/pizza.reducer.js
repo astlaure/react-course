@@ -1,8 +1,8 @@
-import {ADD_PIZZAS, SET_FILTER} from './pizza.actions';
+import { ADD_PIZZAS, SET_FILTER } from './pizza.actions';
 
 const INITIAL_STATE = {
   pizzas: [],
-  filter: ''
+  filter: '',
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

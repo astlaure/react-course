@@ -14,13 +14,13 @@ const PizzaItem = (props) => {
         </div>
       </Link>
     </li>
-  )
+  );
 };
 
 PizzaItem.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };
 
 export default PizzaItem;

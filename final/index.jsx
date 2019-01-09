@@ -9,7 +9,7 @@ const store = createStore(pizzaReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <App />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

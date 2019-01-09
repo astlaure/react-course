@@ -14,9 +14,8 @@ export class App extends React.Component {
     super(props);
 
     this.state = {
-      pizzas: [],
-      error: false
-    }
+      error: false,
+    };
   }
 
   componentDidMount() {
@@ -27,9 +26,9 @@ export class App extends React.Component {
       })
       .catch(() => {
         this.setState({
-          error: true
-        })
-      })
+          error: true,
+        });
+      });
   }
 
   render() {
@@ -40,35 +39,33 @@ export class App extends React.Component {
         <div className="error">
           <p>There was an error</p>
         </div>
-      )
+      );
     }
 
     return (
       <BrowserRouter>
         <div>
-          <Header/>
-          <Route path={'/:id'} component={PizzaDetail} />
-          <Route path={'/'} exact component={PizzaList}/>
+          <Header />
+          <Route path="/:id" component={PizzaDetail} />
+          <Route path="/" exact component={PizzaList} />
         </div>
       </BrowserRouter>
-    )
+    );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPizzas(pizzas) {
-      dispatch(PizzaActions.addPizzas(pizzas));
-    }
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  addPizzas(pizzas) {
+    dispatch(PizzaActions.addPizzas(pizzas));
+  },
+});
 
 App.propTypes = {
-  addPizzas: PropTypes.func
+  addPizzas: PropTypes.func,
 };
 
 App.defaultProps = {
-  addPizzas() {}
+  addPizzas() {},
 };
 
 export default connect(null, mapDispatchToProps)(App);

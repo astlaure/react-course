@@ -1,4 +1,4 @@
-import "./success-button.scss";
+import './success-button.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../button';
@@ -22,7 +22,7 @@ class SuccessButton extends React.Component {
     setTimeout(() => {
       this.setState({
         visible: false,
-      })
+      });
     }, 2000);
   }
 
@@ -40,12 +40,12 @@ class SuccessButton extends React.Component {
         }
         <Button message={message} handleClick={this.handleClick} />
       </div>
-    )
+    );
   }
 }
 
 SuccessButton.propTypes = {
-    message: PropTypes.string.isRequired
+  message: PropTypes.string.isRequired,
 };
 
 export default SuccessButton;
