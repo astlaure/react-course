@@ -1,4 +1,5 @@
 const path = require('path');
+const sass = require('sass');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PizzaRoutes = require('./stub/pizza.routes');
 
@@ -15,7 +16,7 @@ module.exports = env => ({
   module: {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.scss$/, loaders: ['style-loader', 'css-loader', { loader: 'sass-loader', options: { implementation: sass } }] },
       { test: /\.(png|jpg|svg)$/, loader: 'file-loader' },
     ],
   },
