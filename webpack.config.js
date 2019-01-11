@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PizzaRoutes = require('./stub/pizza.routes');
 
 module.exports = env => ({
-  entry: env.final ? './final/index.jsx' : './src/index.jsx',
+  entry: env && env.final ? './final/index.jsx' : './src/index.jsx',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, env.final ? '/fdist' : '/dist'),
+    path: path.resolve(__dirname, env && env.final ? '/fdist' : '/dist'),
   },
   resolve: {
     extensions: ['.jsx', '.js'],
@@ -22,7 +22,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: env.final ? './final/index.html' : './src/index.html',
+      template: env && env.final ? './final/index.html' : './src/index.html',
     }),
   ],
   devtool: 'source-map',
